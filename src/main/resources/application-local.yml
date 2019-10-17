@@ -12,3 +12,6 @@ spring:
     console:
       enabled: true
       path: /h2-console
+
+flyway:
+  baseline-on-migrate=true: true
