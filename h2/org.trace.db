@@ -1,0 +1,3 @@
+2019-10-17 10:37:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROSECUTOR" not found; SQL statement:
+select * from prosecutor [42102-197]

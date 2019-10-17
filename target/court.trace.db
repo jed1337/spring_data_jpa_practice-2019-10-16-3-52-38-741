@@ -1,0 +1,33 @@
+2019-10-17 10:24:35 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""PROSECUTOR""{
+    ID[*] BINARY(16) NOT NULL,
+    NAME VARCHAR(255),
+    PRIMARY KEY(ID)
+} "; expected "long"; SQL statement:
+create table `prosecutor`{
+    id binary(16) not null,
+    name varchar(255),
+    primary key(id)
+} [42001-197]
+2019-10-17 10:27:14 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""PROSECUTOR""{
+    ID[*] BINARY(16) NOT NULL,
+    NAME VARCHAR(255),
+    PRIMARY KEY(ID)
+} "; expected "long"; SQL statement:
+create table `prosecutor`{
+    id binary(16) not null,
+    name varchar(255),
+    primary key(id)
+} [42001-197]
+2019-10-17 10:27:44 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE PROSECUTOR{
+    ID[*] BINARY(16) NOT NULL,
+    NAME VARCHAR(255),
+    PRIMARY KEY(ID)
+} "; expected "long"; SQL statement:
+create table prosecutor{
+    id binary(16) not null,
+    name varchar(255),
+    primary key(id)
+} [42001-197]
