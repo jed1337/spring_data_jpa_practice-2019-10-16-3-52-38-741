@@ -1,5 +1,7 @@
 package com.tw.apistackbase.entity;
 
+import com.tw.apistackbase.repository.ProcuratorateRepo;
+import com.tw.apistackbase.repository.ProsecutorRepo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +10,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @DataJpaTest
