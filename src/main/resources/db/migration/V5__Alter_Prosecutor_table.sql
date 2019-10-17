@@ -1,1 +1,1 @@
-ALTER TABLE `prosecutor` alter column `id` INTEGER(20);
+--ALTER TABLE `prosecutor` alter column `id` INTEGER(20);

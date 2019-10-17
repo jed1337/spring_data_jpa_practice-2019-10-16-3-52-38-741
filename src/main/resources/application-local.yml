@@ -12,6 +12,9 @@ spring:
     console:
       enabled: true
       path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: none
 
 flyway:
   baseline-on-migrate=true: true
