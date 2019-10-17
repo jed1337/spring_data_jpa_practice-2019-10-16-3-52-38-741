@@ -1,0 +1,1 @@
+ALTER TABLE `prosecutor` alter column `id` INTEGER(20);

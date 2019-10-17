@@ -304,3 +304,194 @@ CREATE TABLE `procuratorate` (
     `name` VARCHAR(255)  NOT NULL
 );
  [42000-197]
+2019-10-17 12:17:45 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ""PROSECUTOR"" ([*]
+    ""ID"" INTEGER(16) NOT NULL PRIMARY KEY,
+    ""NAME"" VARCHAR(255) NOT NULL
+) "; expected "., ADD, SET, RENAME, DROP, CHANGE, MODIFY, ALTER"; SQL statement:
+ALTER TABLE `prosecutor` (
+    `id` INTEGER(16) NOT NULL PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL
+) [42001-197]
+2019-10-17 12:20:47 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ""PROSECUTOR"" MODIFY COLUMN ""ID"" INTEGER(16) NOT NULL PRIMARY[*] KEY "; SQL statement:
+ALTER TABLE `prosecutor` MODIFY COLUMN `id` INTEGER(16) NOT NULL PRIMARY KEY [42000-197]
+2019-10-17 12:21:20 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ""PROSECUTOR"" MODIFY ""ID"" INTEGER(16) NOT NULL PRIMARY[*] KEY "; SQL statement:
+ALTER TABLE `prosecutor` MODIFY `id` INTEGER(16) NOT NULL PRIMARY KEY [42000-197]
+2019-10-17 12:22:18 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ""PROSECUTOR"" MODIFY ""ID"" INTEGER(16) NOT NULL PRIMARY[*] KEY "; SQL statement:
+ALTER TABLE `prosecutor` MODIFY `id` INTEGER(16) NOT NULL PRIMARY KEY [42000-197]
+2019-10-17 12:23:53 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ""PROSECUTOR"" ALTER COLUMN ""ID"" INTEGER(16) NOT NULL PRIMARY[*] KEY "; SQL statement:
+ALTER TABLE `prosecutor` alter column `id` INTEGER(16) NOT NULL PRIMARY KEY [42000-197]
+2019-10-17 12:24:05 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "NOT[*] NULL PRIMARY KEY"; SQL statement:
+NOT NULL PRIMARY KEY [42000-197]
+2019-10-17 12:25:10 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ""PROSECUTOR"" ADD CONSTRAINT ""ID"" PRIMARY KEY [*]"; expected "HASH, ("; SQL statement:
+alter table `prosecutor` add constraint `id` primary key [42001-197]
+2019-10-17 12:25:28 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ""PROSECUTOR"" ADD CONSTRAINT ""ID"" PRIMARYKEY[*] "; expected "., COMMENT, PRIMARY, INDEX, KEY, CHECK, UNIQUE, FOREIGN"; SQL statement:
+alter table `prosecutor` add constraint `id` primarykey [42001-197]
+2019-10-17 12:25:32 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ""PROSECUTOR"" ADD CONSTRAINT ""ID"" PK[*] "; expected "., COMMENT, PRIMARY, INDEX, KEY, CHECK, UNIQUE, FOREIGN"; SQL statement:
+alter table `prosecutor` add constraint `id` pk [42001-197]
+2019-10-17 12:26:10 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Attempt to define a second primary key; SQL statement:
+alter table `prosecutor` add primary key(`id`) [90017-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:125)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:78)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:102)
+	at org.h2.command.Command.executeUpdate(Command.java:261)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:233)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1077)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1386)
+	at org.h2.server.web.WebApp.query(WebApp.java:1060)
+	at org.h2.server.web.WebApp.query(WebApp.java:1036)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:170)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:124)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:161)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:158)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:126)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:111)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-10-17 12:26:37 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:D:/repositories/Spring/spring-boot-examples/spring_data_jpa_practice-2019-10-16-3-52-38-741/target/court.mv.db [1.4.197/7]" [50000-197]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:307)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2506)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:383)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:364)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2934)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2538)
+	at org.h2.engine.Database.open(Database.java:709)
+	at org.h2.engine.Database.openDatabase(Database.java:286)
+	at org.h2.engine.Database.<init>(Database.java:280)
+	at org.h2.engine.Engine.openSession(Engine.java:66)
+	at org.h2.engine.Engine.openSession(Engine.java:179)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:157)
+	at org.h2.engine.Engine.createSession(Engine.java:140)
+	at org.h2.engine.Engine.createSession(Engine.java:28)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:351)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:103)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnectionFromDriver(DriverDataSource.java:447)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnection(DriverDataSource.java:413)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:56)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:80)
+	at org.flywaydb.core.Flyway.execute(Flyway.java:438)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:149)
+	at org.flywaydb.gradle.task.FlywayMigrateTask.run(FlywayMigrateTask.java:28)
+	at org.flywaydb.gradle.task.AbstractFlywayTask.runTask(AbstractFlywayTask.java:517)
+	at sun.reflect.GeneratedMethodAccessor443.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:73)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:46)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:39)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:26)
+	at org.gradle.api.internal.AbstractTask$TaskActionWrapper.execute(AbstractTask.java:788)
+	at org.gradle.api.internal.AbstractTask$TaskActionWrapper.execute(AbstractTask.java:755)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter$1.run(ExecuteActionsTaskExecuter.java:124)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:336)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:328)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:199)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:110)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeAction(ExecuteActionsTaskExecuter.java:113)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:95)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:73)
+	at org.gradle.api.internal.tasks.execution.OutputDirectoryCreatingTaskExecuter.execute(OutputDirectoryCreatingTaskExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipUpToDateTaskExecuter.execute(SkipUpToDateTaskExecuter.java:59)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskOutputCachingStateExecuter.execute(ResolveTaskOutputCachingStateExecuter.java:54)
+	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:59)
+	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:101)
+	at org.gradle.api.internal.tasks.execution.FinalizeInputFilePropertiesTaskExecuter.execute(FinalizeInputFilePropertiesTaskExecuter.java:44)
+	at org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute(CleanupStaleOutputsExecuter.java:88)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskArtifactStateTaskExecuter.execute(ResolveTaskArtifactStateTaskExecuter.java:62)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:54)
+	at org.gradle.api.internal.tasks.execution.ExecuteAtMostOnceTaskExecuter.execute(ExecuteAtMostOnceTaskExecuter.java:43)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:34)
+	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker$1.run(DefaultTaskGraphExecuter.java:248)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:336)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:328)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:199)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:110)
+	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker.execute(DefaultTaskGraphExecuter.java:241)
+	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker.execute(DefaultTaskGraphExecuter.java:230)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker.processTask(DefaultTaskPlanExecutor.java:123)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker.access$200(DefaultTaskPlanExecutor.java:79)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker$1.execute(DefaultTaskPlanExecutor.java:104)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker$1.execute(DefaultTaskPlanExecutor.java:98)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionPlan.execute(DefaultTaskExecutionPlan.java:623)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionPlan.executeWithTask(DefaultTaskExecutionPlan.java:578)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker.run(DefaultTaskPlanExecutor.java:98)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:D:/repositories/Spring/spring-boot-examples/spring_data_jpa_practice-2019-10-16-3-52-38-741/target/court.mv.db [1.4.197/7]" [50000-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	... 79 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:D:/repositories/Spring/spring-boot-examples/spring_data_jpa_practice-2019-10-16-3-52-38-741/target/court.mv.db [1.4.197/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:870)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:350)
+	... 73 more
